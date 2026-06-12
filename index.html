@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itboy.pw | IT技术爱好者的个人网站 - 学习成长记录</title>
+    <meta name="description" content="IT技术爱好者的个人网站，记录从2015年开始的技术学习历程、前端开发、后端开发、项目实践经验。包含技术栈介绍、成长轨迹和项目展示。">
+    <meta name="keywords" content="IT技术,前端开发,后端开发,个人网站,学习记录,技术成长,Web开发,HTML,CSS,JavaScript,PHP,MySQL,Docker">
+    <meta name="author" content="iT男孩">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Chinese">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="baidu-site-verification" content="codeva-你的验证码" />
+    <link rel="canonical" href="https://www.itboy.pw" />
+
+    <!-- JSON-LD 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "name": "itboy.pw",
+                "url": "https://www.itboy.pw",
+                "description": "IT技术爱好者的个人网站，记录从2015年开始的技术学习历程、前端开发、后端开发、项目实践经验",
+                "inLanguage": "zh-CN"
+            },
+            {
+                "@type": "Person",
+                "name": "iT男孩",
+                "url": "https://www.itboy.pw",
+                "description": "IT技术爱好者，从2015年开始学习Web开发，涵盖前端、后端、数据库等技术"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        /* ===== CSS变量 ===== */
+        :root {
+            --primary: #00d9ff;
+            --secondary: #00ff9d;
+            --dark-bg: #0a0e17;
+            --card-bg: rgba(15, 22, 36, 0.85);
+            --text-light: #ffffff;
+            --text-gray: #a0b3d9;
+            --border-color: rgba(0, 217, 255, 0.15);
+            --gradient: linear-gradient(135deg, #00d9ff, #0066ff);
+            --font-main: 'Inter', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 0.8rem;
+            --spacing-md: 1.2rem;
+            --spacing-lg: 1.8rem;
+            --spacing-xl: 2.5rem;
+            --border-radius: 10px;
+        }
+
+        /* ===== 重置与基础 ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-main);
+            background: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 157, 0.08) 0%, transparent 40%);
+        }
+
+        /* ===== 粒子背景容器 ===== */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: var(--dark-bg);
+        }
+
+        /* ===== 通用容器 ===== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* ===== 通用卡片 ===== */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            border-color: rgba(0, 217, 255, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.1);
+        }
+
+        /* ===== 通用标题 ===== */
+        .section-title {
+            font-size: clamp(1.6rem, 4vw, 2rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            color: var(--text-light);
+            position: relative;
+            display: block;
+            width: 100%;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        /* ===== 导航栏 ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background: rgba(10, 14, 23, 0.98);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        .logo span:nth-child(1) { color: var(--primary); }
+        .logo span:nth-child(3) { color: var(--secondary); }
+        .desktop-nav { display: flex; gap: var(--spacing-lg); }
+        .nav-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .nav-link:hover { color: var(--text-light); }
+
+        /* ===== Hero区域 ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: var(--spacing-xl) var(--spacing-md);
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 800px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+        .hero-subtitle {
+            font-family: var(--font-mono);
+            color: var(--secondary);
+            font-size: clamp(0.8rem, 2vw, 0.95rem);
+            letter-spacing: 3px;
+            margin-bottom: var(--spacing-sm);
+        }
+        .domain-display {
+            font-size: clamp(2rem, 7vw, 3rem);
+            font-weight: 800;
+            margin: var(--spacing-sm) 0 var(--spacing-md);
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+        }
+        .hero-tagline {
+            font-size: clamp(0.95rem, 3vw, 1.05rem);
+            color: var(--text-gray);
+            max-width: 550px;
+            margin: 0 auto var(--spacing-lg);
+            line-height: 1.7;
+        }
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid transparent;
+            border-image: var(--gradient);
+            border-image-slice: 1;
+            border-radius: 8px;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .cta-button:hover {
+            background: rgba(0, 217, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* ===== 域名含义 ===== */
+        .domain-section {
+            padding: var(--spacing-xl) 0;
+            position: relative;
+        }
+        .domain-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 800px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+        .domain-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+        .domain-card {
+            text-align: center;
+            padding: var(--spacing-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 280px;
+        }
+        .part-name {
+            font-size: clamp(1.8rem, 5vw, 2.2rem);
+            font-weight: 800;
+            margin-bottom: var(--spacing-md);
+            font-family: var(--font-mono);
+        }
+        .part-name.it { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .part-name.boy { color: var(--text-light); }
+        .part-name.pw { background: linear-gradient(135deg, #00ff9d, #00d9ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .part-desc { color: var(--text-gray); font-size: 0.95rem; line-height: 1.7; flex-grow: 1; }
+
+        /* ===== 时间轴 ===== */
+        .timeline-section { padding: var(--spacing-xl) 0; }
+        .timeline { max-width: 800px; margin: var(--spacing-lg) auto 0; position: relative; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--primary), var(--secondary), var(--primary), transparent);
+            transform: translateX(90px);
+        }
+        .timeline-item { display: flex; margin-bottom: var(--spacing-xl); position: relative; padding-left: 120px; }
+        .timeline-year {
+            position: absolute;
+            left: 0;
+            top: 0;
+            min-width: 100px;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-weight: 700;
+            color: var(--primary);
+            background: var(--dark-bg);
+            padding: 10px 15px;
+            border-radius: 25px;
+            border: 1px solid var(--primary);
+            font-size: 1.1rem;
+            z-index: 2;
+            box-shadow: 0 0 0 10px var(--dark-bg);
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 88px;
+            top: 20px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            z-index: 3;
+            box-shadow: 0 0 15px var(--primary);
+        }
+        .timeline-content { flex: 1; }
+        .timeline-title { font-size: 1.3rem; font-weight: 600; color: var(--text-light); margin-bottom: var(--spacing-sm); }
+        .timeline-desc { color: var(--text-gray); font-size: 0.95rem; line-height: 1.7; }
+        .timeline-tags { display: flex; flex-wrap: wrap; gap: var(--spacing-xs); margin-top: var(--spacing-sm); }
+        .timeline-tag {
+            background: rgba(0, 102, 255, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-family: var(--font-mono);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+        }
+
+        /* ===== 联系我 ===== */
+        .connect-section {
+            padding: var(--spacing-md) 0 var(--spacing-lg);
+            text-align: center;
+            position: relative;
+        }
+        .connect-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 800px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+        .connect-section .section-title { margin-top: var(--spacing-md); margin-bottom: var(--spacing-md); }
+        .connect-subtitle { color: var(--text-gray); font-size: 0.95rem; max-width: 550px; margin: 0 auto var(--spacing-md); line-height: 1.7; }
+        .email-container { margin-bottom: var(--spacing-md); }
+        .email-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background: var(--gradient);
+            color: var(--dark-bg);
+            border: none;
+            border-radius: 8px;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: var(--spacing-xs);
+        }
+        .email-button:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 217, 255, 0.3); }
+        .email-hint { color: var(--text-gray); font-size: 0.8rem; margin-top: var(--spacing-xs); }
+
+        /* ===== 弹窗 ===== */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(0, 0, 0, 0.92);
+            border: 2px solid var(--primary);
+            backdrop-filter: blur(12px);
+            padding: 18px 24px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 217, 255, 0.25);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            max-width: 300px;
+            min-width: 240px;
+            width: auto;
+        }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+        .toast-icon { color: #00ff9d; font-size: 1.8rem; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+        .toast-content h4 { color: #ffffff; margin: 0; font-size: 1.1rem; font-weight: 500; line-height: 1.4; white-space: nowrap; }
+
+        /* ===== 页脚 ===== */
+        .footer {
+            padding: var(--spacing-md) 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            background: rgba(10, 14, 23, 0.7);
+        }
+        .footer-tagline { font-size: 1.1rem; margin-bottom: var(--spacing-xs); color: var(--text-light); font-weight: 500; }
+        .footer-copyright { font-size: 0.95rem; opacity: 0.9; margin-top: var(--spacing-xs); }
+        .footer-copyright a { color: var(--secondary); text-decoration: none; transition: color 0.3s; }
+        .footer-copyright a:hover { color: var(--primary); text-decoration: underline; }
+
+        /* ===== 动画 ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { animation: fadeInUp 0.5s ease forwards; }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 768px) {
+            .container { padding: 0 var(--spacing-sm); }
+            .desktop-nav { gap: var(--spacing-sm); }
+            .domain-cards { grid-template-columns: 1fr; gap: var(--spacing-md); }
+            .domain-card { padding: var(--spacing-md); min-height: auto; }
+            .timeline::before { transform: translateX(70px); }
+            .timeline-item { padding-left: 90px; margin-bottom: var(--spacing-lg); }
+            .timeline-year { min-width: 80px; font-size: 1rem; padding: 8px 12px; box-shadow: 0 0 0 8px var(--dark-bg); }
+            .timeline-dot { left: 68px; top: 18px; }
+            .hero { padding-top: 80px; padding-bottom: var(--spacing-xl); }
+            .navbar { padding: var(--spacing-sm) var(--spacing-md); }
+            .section-title { font-size: 1.5rem; margin-bottom: var(--spacing-md); }
+            .section-title::after { width: 40px; bottom: -4px; }
+            .part-name { font-size: 1.5rem; }
+            .toast { bottom: 20px; padding: 16px 20px; gap: 14px; max-width: 260px; min-width: 200px; width: 90%; }
+            .toast-icon { font-size: 1.6rem; }
+            .toast-content h4 { font-size: 1rem; }
+            .email-button { padding: var(--spacing-sm) var(--spacing-md); font-size: 0.9rem; }
+            .connect-section { padding: var(--spacing-sm) 0 var(--spacing-md); }
+            .connect-section .section-title { margin-top: var(--spacing-sm); margin-bottom: var(--spacing-sm); }
+            .footer { padding: var(--spacing-sm) 0; }
+            .footer-tagline { font-size: 1rem; }
+            .footer-copyright { font-size: 0.9rem; }
+        }
+        @media (max-width: 480px) {
+            .hero-tagline, .connect-subtitle { font-size: 0.9rem; padding: 0; }
+            .domain-display { font-size: 1.8rem; }
+            .section-title { font-size: 1.4rem; }
+            .part-name { font-size: 1.4rem; }
+            .toast { bottom: 15px; padding: 14px 18px; gap: 12px; max-width: 220px; min-width: 180px; }
+            .toast-icon { font-size: 1.4rem; }
+            .toast-content h4 { font-size: 0.95rem; }
+            .email-button { padding: 0.8rem var(--spacing-md); font-size: 0.85rem; }
+            .timeline-item { padding-left: 85px; }
+            .timeline-year { min-width: 75px; font-size: 0.95rem; padding: 7px 10px; box-shadow: 0 0 0 6px var(--dark-bg); }
+            .timeline-dot { left: 65px; top: 16px; }
+            .connect-section { padding: var(--spacing-sm) 0; }
+            .footer-tagline { font-size: 0.95rem; }
+            .footer-copyright { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 粒子背景 -->
+    <div id="particles-js"></div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <a href="/" class="logo" aria-label="itboy.pw 网站首页">
+            <span>it</span><span>boy</span><span>.</span><span>pw</span>
+        </a>
+        <div class="desktop-nav">
+            <a href="#domain" class="nav-link">域名含义</a>
+            <a href="#timeline" class="nav-link">成长轨迹</a>
+            <a href="https://blog.itboy.pw" class="nav-link" target="_blank">我的博客</a>
+            <a href="#connect" class="nav-link">联系我</a>
+        </div>
+    </nav>
+
+    <!-- Hero区域 -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <p class="hero-subtitle fade-in">个人技术空间 · 学习成长记录</p>
+                <h1 class="domain-display fade-in">itboy.pw</h1>
+                <p class="hero-tagline fade-in">这是我的个人技术主页，记录我从2015年开始的学习历程与技术实践。在这里，你可以看到我的学习轨迹、技术栈和实际项目。</p>
+                <a href="#domain" class="cta-button fade-in">
+                    <span>了解我的技术世界</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 域名含义 -->
+        <section class="domain-section" id="domain">
+            <div class="container">
+                <h2 class="section-title fade-in">域名含义</h2>
+                <div class="domain-cards">
+                    <article class="card domain-card fade-in">
+                        <h3 class="part-name it">IT</h3>
+                        <p class="part-desc">IT是Information Technology的缩写，意思是信息技术。我选择了这个域名，因为我对互联网技术充满热情，希望在这里分享我的技术学习和实践经验。</p>
+                    </article>
+                    <article class="card domain-card fade-in">
+                        <h3 class="part-name boy">BOY</h3>
+                        <p class="part-desc">Boy是男孩的意思。虽然技术在不断发展，但我始终保持着一颗学习者的心态，像初学者一样对新技术充满好奇和热情。</p>
+                    </article>
+                    <article class="card domain-card fade-in">
+                        <h3 class="part-name pw">.PW</h3>
+                        <p class="part-desc">.PW是Personal Website的缩写，代表个人网站。这个域名后缀完美契合了我的需求：一个记录我技术学习和成长历程的个人空间。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 时间轴 -->
+        <section class="timeline-section" id="timeline">
+            <div class="container">
+                <h2 class="section-title fade-in">成长轨迹</h2>
+                <div class="timeline">
+                    <article class="timeline-item fade-in">
+                        <div class="timeline-year">2015年</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <h3 class="timeline-title">注册域名</h3>
+                            <p class="timeline-desc">注册了 itboy.pw 域名，开始对个人网站产生兴趣。当时对技术了解不多，但觉得应该有个自己的网络空间。</p>
+                            <div class="timeline-tags"><span class="timeline-tag">域名注册</span><span class="timeline-tag">开始</span></div>
+                        </div>
+                    </article>
+                    <article class="timeline-item fade-in">
+                        <div class="timeline-year">2018年</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <h3 class="timeline-title">规划学习</h3>
+                            <p class="timeline-desc">开始系统规划技术学习路径，研究HTML、CSS、JavaScript等前端技术，思考如何建立个人网站。</p>
+                            <div class="timeline-tags"><span class="timeline-tag">学习规划</span><span class="timeline-tag">前端基础</span></div>
+                        </div>
+                    </article>
+                    <article class="timeline-item fade-in">
+                        <div class="timeline-year">2020年</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <h3 class="timeline-title">前端学习</h3>
+                            <p class="timeline-desc">深入学习HTML5、CSS3和JavaScript，完成多个前端练习项目，理解响应式设计和浏览器兼容性。</p>
+                            <div class="timeline-tags"><span class="timeline-tag">HTML/CSS</span><span class="timeline-tag">JavaScript</span></div>
+                        </div>
+                    </article>
+                    <article class="timeline-item fade-in">
+                        <div class="timeline-year">2023年</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <h3 class="timeline-title">后端探索</h3>
+                            <p class="timeline-desc">开始学习PHP和MySQL，理解服务器端编程和数据库操作，尝试搭建动态网站。</p>
+                            <div class="timeline-tags"><span class="timeline-tag">PHP</span><span class="timeline-tag">MySQL</span><span class="timeline-tag">后端</span></div>
+                        </div>
+                    </article>
+                    <article class="timeline-item fade-in">
+                        <div class="timeline-year">2025年</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <h3 class="timeline-title">项目实践</h3>
+                            <p class="timeline-desc">开始实际项目开发，整合前后端知识，开发了几个实用的Web应用，积累项目经验。</p>
+                            <div class="timeline-tags"><span class="timeline-tag">项目开发</span><span class="timeline-tag">全栈实践</span></div>
+                        </div>
+                    </article>
+                    <article class="timeline-item fade-in">
+                        <div class="timeline-year">2026年</div>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content card">
+                            <h3 class="timeline-title">博客上线</h3>
+                            <p class="timeline-desc">搭建了自己的个人博客 <a href="https://blog.itboy.pw" style="color: var(--secondary);" target="_blank">ITboy的小基地</a>，说点想说的，写点想写的小心思。记录生活、思考和折腾的过程，一个公开的朋友圈。</p>
+                            <div class="timeline-tags">
+                                <span class="timeline-tag">博客</span>
+                                <span class="timeline-tag">生活</span>
+                                <span class="timeline-tag">记录</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系我 -->
+        <section class="connect-section" id="connect">
+            <div class="container">
+                <h2 class="section-title fade-in">联系我</h2>
+                <p class="connect-subtitle fade-in">对Web开发、技术学习或项目合作感兴趣？欢迎联系交流。无论是技术问题、学习心得还是项目想法，都欢迎讨论。</p>
+                <div class="email-container fade-in">
+                    <button id="emailButton" class="email-button" aria-label="复制邮箱地址">
+                        <span>✉</span>
+                        <span id="emailText">admin@itboy.pw</span>
+                    </button>
+                    <p class="email-hint">点击自动复制邮箱地址</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 弹窗通知 -->
+    <div id="toast" class="toast" aria-live="polite" aria-atomic="true" aria-hidden="true">
+        <div class="toast-icon">✓</div>
+        <div class="toast-content">
+            <h4>邮箱地址已复制</h4>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-tagline">个人技术空间 · 学习成长记录</p>
+            <p class="footer-copyright">© 2026 iT 男孩 | <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">冀ICP备17009609号</a></p>
+        </div>
+    </footer>
+
+    <!-- 百度统计 -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bcf513d40723efe6cad3280757ef1154";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+    <!-- 引入 particles.js (本地路径) -->
+    <script src="/js/particles.min.js"></script>
+    <script>
+        (function() {
+            // ===== 初始化粒子背景 =====
+            if (typeof particlesJS !== 'undefined') {
+                try {
+                    particlesJS('particles-js', {
+                        particles: {
+                            number: { value: 45, density: { enable: true, value_area: 800 } },
+                            color: { value: "#00d9ff" },
+                            shape: { type: "circle" },
+                            opacity: { value: 0.4, random: true },
+                            size: { value: 2.5, random: true },
+                            line_linked: { enable: true, distance: 130, color: "#00d9ff", opacity: 0.2, width: 1 },
+                            move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out", bounce: false, attract: { enable: true, rotateX: 600, rotateY: 1200 } }
+                        },
+                        interactivity: {
+                            detect_on: "canvas",
+                            events: { onhover: { enable: true, mode: "repulse", distance: 100 }, onclick: { enable: true, mode: "push" } },
+                            modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+                        },
+                        retina_detect: true
+                    });
+                } catch (e) {
+                    console.warn('粒子背景初始化失败，使用纯色背景');
+                }
+            }
+
+            // ===== 邮箱复制功能 =====
+            var emailButton = document.getElementById('emailButton');
+            var toast = document.getElementById('toast');
+            var emailAddress = 'admin@itboy.pw';
+            var toastTimeout;
+
+            emailButton.addEventListener('click', function() {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(emailAddress).then(function() {
+                        showToast();
+                    }).catch(function() {
+                        fallbackCopy();
+                    });
+                } else {
+                    fallbackCopy();
+                }
+                clearTimeout(toastTimeout);
+                toastTimeout = setTimeout(function() {
+                    hideToast();
+                }, 5000);
+            });
+
+            function fallbackCopy() {
+                var textArea = document.createElement('textarea');
+                textArea.value = emailAddress;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-9999px';
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast();
+            }
+
+            function showToast() {
+                toast.classList.add('show');
+                toast.setAttribute('aria-hidden', 'false');
+            }
+
+            function hideToast() {
+                toast.classList.remove('show');
+                toast.setAttribute('aria-hidden', 'true');
+            }
+
+            toast.addEventListener('click', hideToast);
+
+            // ===== 滚动时导航栏效果 =====
+            window.addEventListener('scroll', function() {
+                var navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.style.background = 'rgba(10, 14, 23, 0.99)';
+                    navbar.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
+                } else {
+                    navbar.style.background = 'rgba(10, 14, 23, 0.98)';
+                    navbar.style.boxShadow = 'none';
+                }
+            });
+
+            // ===== 滚动动画（带节流） =====
+            var fadeElements = document.querySelectorAll('.fade-in');
+            var ticking = false;
+
+            fadeElements.forEach(function(element) {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+
+            function checkScroll() {
+                fadeElements.forEach(function(element) {
+                    var elementTop = element.getBoundingClientRect().top;
+                    var windowHeight = window.innerHeight;
+                    if (elementTop < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(checkScroll);
+                    ticking = true;
+                }
+            });
+
+            setTimeout(checkScroll, 100);
+
+            // ===== 平滑滚动 =====
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    var targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    var targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
