@@ -109,9 +109,10 @@
             letter-spacing: 0.02em;
         }
 
+        /* 修改为三列自适应布局，这样剩下的 3 个卡片在电脑上刚好一排 */
         .works-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             animation: fadeUpIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
             margin-top: 1rem;
@@ -302,6 +303,9 @@
         @keyframes overlayIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes toastIn { from { opacity: 0; transform: translateY(20px) scale(0.94); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
+        @media (max-width: 1024px) {
+            .works-grid { grid-template-columns: repeat(2, 1fr); }
+        }
         @media (max-width: 768px) {
             body { padding: 1.8rem 1rem; }
             .works-grid { grid-template-columns: 1fr; }
@@ -322,11 +326,11 @@
             <h1 class="logo">iTboy</h1>
         </header>
 
-        <!-- 已删除“从虚拟主机到云端” -->
         <section class="intro-section" aria-label="个人简介">
             <p>河北保定的90后开发者。从 HTML 到 Python，用代码把想法一个个落地。</p>
         </section>
 
+        <!-- 作品集区域：已移除“技术博客”卡片 -->
         <main class="works-grid" aria-label="作品集">
             <a href="https://60s.itboy.top" target="_blank" class="card card-news">
                 <span class="card-icon">🔥</span>
@@ -347,13 +351,6 @@
                 <h2>金融数据面板</h2>
                 <p class="card-desc">将庞杂的金融数据整理为清晰的图形面板，直观呈现数据背后的趋势。</p>
                 <span class="card-link">查看面板 ↗</span>
-            </a>
-
-            <a href="https://blog.itboy.top" target="_blank" class="card card-service">
-                <span class="card-icon">📝</span>
-                <h2>技术博客</h2>
-                <p class="card-desc">随手记录生活日常，一个公开的记事本。</p>
-                <span class="card-link">阅读文章 ↗</span>
             </a>
         </main>
 
