@@ -2,13 +2,59 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="baidu-site-verification" content="codeva-I816D6VvJD" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iT男孩</title>
+
+    <!-- 百度站长验证 -->
+    <meta name="baidu-site-verification" content="codeva-I816D6VvJD" />
+
+    <!-- SEO 基础 -->
+    <title>iTboy 个人主页 - 90 后开发者作品集</title>
+    <meta name="description" content="河北保定 90 后开发者的个人主页，收录每日 60s 速览、金价观察站、金融数据面板等作品，用代码把想法一个个落地。">
+    <meta name="keywords" content="iTboy,itboy,个人主页,个人网站,开发者作品集,每日60s,金价观察,金融数据面板,河北保定开发者">
+    <meta name="author" content="iTboy">
+    <link rel="canonical" href="https://itboy.top/">
+
+    <!-- 语言与地区 -->
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta name="geo.region" content="CN-HE">
+    <meta name="geo.placename" content="保定">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#141C26">
+
+    <!-- 社交分享 -->
+    <meta property="og:title" content="iTboy 个人主页 - 90 后开发者作品集">
+    <meta property="og:description" content="河北保定 90 后开发者的个人主页，收录每日 60s、金价观察、金融数据面板等作品。">
+    <meta property="og:url" content="https://itboy.top/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="iTboy">
+    <meta property="og:locale" content="zh_CN">
+
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "iTboy",
+      "url": "https://itboy.top/",
+      "email": "admin@itboy.top",
+      "jobTitle": "开发者",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "保定",
+        "addressRegion": "河北",
+        "addressCountry": "CN"
+      },
+      "knowsAbout": ["HTML", "Python", "Web 开发"],
+      "sameAs": [
+        "https://github.com/itboy365"
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;850&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         /* ====== 核心色彩变量 ====== */
         :root {
@@ -110,7 +156,6 @@
             letter-spacing: 0.02em;
         }
 
-        /* 修改为三列自适应布局，这样剩下的 3 个卡片在电脑上刚好一排 */
         .works-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -342,7 +387,6 @@
             <p>河北保定的90后开发者。从 HTML 到 Python，用代码把想法一个个落地。</p>
         </section>
 
-        <!-- 作品集区域：已移除“技术博客”卡片 -->
         <main class="works-grid" aria-label="作品集">
             <a href="https://60s.itboy.top" target="_blank" class="card card-news">
                 <span class="card-icon">🔥</span>
