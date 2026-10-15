@@ -480,7 +480,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.9rem;
+            gap: 1.2rem;
         }
 
         .social-links {
@@ -494,7 +494,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
-            padding: 0.5rem 1.1rem;
+            padding: 0.5rem 1.3rem;
             border-radius: 10px;
             background: var(--surface);
             backdrop-filter: blur(10px);
@@ -517,7 +517,7 @@
         .footer-meta {
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.7rem;
             align-items: center;
         }
 
@@ -544,81 +544,24 @@
             animation: rainbowFlow 3s linear infinite;
         }
 
-        .footer .visitor-line {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            display: flex;
-            gap: 0.8rem;
-            align-items: center;
-        }
-
-        .footer .visitor-line span {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-
+        /* ====== 版权行（国际通用严谨版） ====== */
         .footer .copyright {
             font-size: 0.75rem;
             color: var(--text-muted);
-            letter-spacing: 0.05em;
-            margin-top: 0.3rem;
-        }
-
-        /* ====== 邮箱弹窗 ====== */
-        .email-toast-overlay {
-            position: fixed;
-            inset: 0;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(4px);
-        }
-        .email-toast-overlay.active { display: flex; animation: overlayIn 0.25s; }
-
-        .email-toast {
-            background: rgba(30, 35, 45, 0.95);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: var(--radius);
-            padding: 2rem 2.2rem;
+            letter-spacing: 0.04em;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-top: 0.4rem;
             text-align: center;
-            max-width: 380px;
-            width: 90%;
-            color: #E8E4DD;
-            animation: toastIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
-        .email-toast .toast-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
-        .email-toast .toast-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.4rem; }
-        .email-toast .toast-email {
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-            color: #F0C060;
-            background: rgba(255,255,255,0.06);
-            padding: 0.35rem 0.8rem;
-            border-radius: 6px;
-            display: inline-block;
-            margin-bottom: 0.8rem;
+        .footer .copyright .brand {
+            font-weight: 700;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            letter-spacing: 0.02em;
+            margin: 0 0.1em;
         }
-        .email-toast .toast-question { font-size: 0.9rem; color: #A8A49B; margin-bottom: 1.2rem; }
-        .email-toast .toast-buttons { display: flex; gap: 0.8rem; justify-content: center; }
-        .email-toast .btn-cancel, .email-toast .btn-confirm {
-            padding: 0.55rem 1.6rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            border: none;
-            transition: all 0.2s;
-        }
-        .email-toast .btn-cancel { background: rgba(255,255,255,0.1); color: #A8A49B; }
-        .email-toast .btn-cancel:hover { background: rgba(255,255,255,0.15); }
-        .email-toast .btn-confirm { background: #C43D3D; color: #fff; }
-        .email-toast .btn-confirm:hover { background: #D94A4A; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(196,61,61,0.35); }
 
         /* ====== 回到顶部 ====== */
         .back-to-top {
@@ -668,8 +611,6 @@
             0% { background-position: 0% 50%; }
             100% { background-position: 300% 50%; }
         }
-        @keyframes overlayIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes toastIn { from { opacity: 0; transform: translateY(20px) scale(0.94); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
         /* ====== 响应式 ====== */
         @media (max-width: 1024px) {
@@ -692,7 +633,7 @@
             .brand-section .logo { font-size: 1.9rem; }
             .avatar { width: 72px; height: 72px; font-size: 1.3rem; }
             .about-section { padding: 1.4rem 1.3rem; }
-            .social-link { padding: 0.45rem 0.9rem; font-size: 0.78rem; }
+            .social-link { padding: 0.5rem 1.1rem; font-size: 0.8rem; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -787,11 +728,8 @@
 
         <footer class="footer">
             <div class="social-links">
-                <a href="https://github.com/itboy365" target="_blank" rel="noopener" class="social-link">
-                    <span>⌨</span> GitHub
-                </a>
-                <a href="javascript:void(0)" class="social-link" id="emailTrigger">
-                    <span>✉</span> 邮箱
+                <a href="https://jiaquan.top" target="_blank" rel="noopener" class="social-link">
+                    <span>✉</span> 联系我
                 </a>
             </div>
 
@@ -801,36 +739,15 @@
                     <span class="timer-display" id="timer">0 天 00 时 00 分 00 秒</span>
                 </div>
 
-                <div class="visitor-line">
-                    <span>👁 访客 <span id="busuanzi_value_site_uv">-</span></span>
-                    <span>·</span>
-                    <span>📊 浏览 <span id="busuanzi_value_site_pv">-</span></span>
-                </div>
-
-                <p class="copyright">© 2026 iTboy</p>
+                <p class="copyright">
+                    Copyright © 2026 <span class="brand">iTboy</span>. 保留所有权利。
+                </p>
             </div>
         </footer>
     </div>
 
     <!-- 回到顶部 -->
     <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
-
-    <!-- 邮箱弹窗 -->
-    <div class="email-toast-overlay" id="emailOverlay" aria-hidden="true">
-        <div class="email-toast" role="dialog" aria-modal="true">
-            <div class="toast-icon">📋</div>
-            <div class="toast-title">您已成功复制邮箱</div>
-            <div class="toast-email">admin@itboy.top</div>
-            <div class="toast-question">是否发送邮件？</div>
-            <div class="toast-buttons">
-                <button class="btn-cancel" id="btnCancel">取消</button>
-                <button class="btn-confirm" id="btnConfirm">确定</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 不蒜子访客统计 -->
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
     <script>
         (function() {
@@ -848,7 +765,6 @@
                 }
             }
 
-            // 优先读 localStorage，其次跟随系统
             const savedTheme = localStorage.getItem('itboy-theme');
             if (savedTheme) {
                 applyTheme(savedTheme);
@@ -880,69 +796,6 @@
             }
             updateTimer();
             setInterval(updateTimer, 1000);
-
-            // ====== 邮箱复制弹窗 ======
-            const emailTrigger = document.getElementById('emailTrigger');
-            const overlay = document.getElementById('emailOverlay');
-            const btnCancel = document.getElementById('btnCancel');
-            const btnConfirm = document.getElementById('btnConfirm');
-            const emailAddr = 'admin@itboy.top';
-            let autoCloseTimer = null;
-
-            function openToast() {
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(emailAddr).catch(() => {});
-                } else {
-                    const ta = document.createElement('textarea');
-                    ta.value = emailAddr;
-                    ta.style.position = 'fixed';
-                    ta.style.left = '-9999px';
-                    document.body.appendChild(ta);
-                    ta.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(ta);
-                }
-                overlay.classList.add('active');
-                overlay.setAttribute('aria-hidden', 'false');
-                autoCloseTimer = setTimeout(closeToast, 5000);
-            }
-
-            function closeToast() {
-                if (autoCloseTimer) {
-                    clearTimeout(autoCloseTimer);
-                    autoCloseTimer = null;
-                }
-                overlay.classList.remove('active');
-                overlay.setAttribute('aria-hidden', 'true');
-            }
-
-            function sendEmail() {
-                closeToast();
-                window.location.href = 'mailto:' + emailAddr;
-            }
-
-            emailTrigger.addEventListener('click', function(e) {
-                e.preventDefault();
-                openToast();
-            });
-            btnCancel.addEventListener('click', function(e) {
-                e.stopPropagation();
-                closeToast();
-            });
-            btnConfirm.addEventListener('click', function(e) {
-                e.stopPropagation();
-                sendEmail();
-            });
-            overlay.addEventListener('click', function(e) {
-                if (e.target === overlay) {
-                    closeToast();
-                }
-            });
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && overlay.classList.contains('active')) {
-                    closeToast();
-                }
-            });
 
             // ====== 回到顶部 ======
             const backToTop = document.getElementById('backToTop');
