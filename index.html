@@ -1,816 +1,917 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- 百度站长验证 -->
-    <meta name="baidu-site-verification" content="codeva-I816D6VvJD" />
+<title>权 · 互联网数字名片 - 河北保定 90 后开发者</title>
+<meta name="description" content="一个九零后小伙子的互联网名片。来自河北保定，喜欢待在互联网的小角落里折腾点自己的东西。" />
+<meta name="keywords" content="权,互联网数字名片,个人主页,个人名片,jiaquan.top,河北保定,开发者,建站,服务器" />
+<meta name="author" content="权" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta name="geo.region" content="CN-HE" />
+<meta name="geo.placename" content="保定" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#faf7f2" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="canonical" href="https://jiaquan.top/" />
 
-    <!-- SEO -->
-    <title>iTboy · 独立开发者 · 河北保定</title>
-    <meta name="description" content="河北保定 90 后独立开发者。作品：每日 60s 速览、金价观察站、金融数据面板。专注信息聚合与数据可视化。">
-    <meta name="keywords" content="iTboy,itboy,独立开发者,个人主页,作品集,每日60s,金价观察,金融数据面板,河北保定">
-    <meta name="author" content="iTboy">
-    <link rel="canonical" href="https://itboy.top/">
+<meta property="og:type" content="website" />
+<meta property="og:title" content="互联网数字名片" />
+<meta property="og:description" content="一个九零后小伙子的互联网名片。来自河北保定，喜欢待在互联网的小角落里折腾点自己的东西。" />
+<meta property="og:url" content="https://jiaquan.top/" />
+<meta property="og:site_name" content="互联网数字名片" />
+<meta property="og:locale" content="zh_CN" />
 
-    <!-- 移动端添加到主屏 -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="iTboy">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#141C26" media="(prefers-color-scheme: dark)">
-    <meta name="theme-color" content="#FAF7F2" media="(prefers-color-scheme: light)">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="互联网数字名片" />
+<meta name="twitter:description" content="一个九零后小伙子的互联网名片。来自河北保定，喜欢待在互联网的小角落里折腾点自己的东西。" />
 
-    <!-- 语言与地区 -->
-    <meta http-equiv="Content-Language" content="zh-CN">
-    <meta name="geo.region" content="CN-HE">
-    <meta name="geo.placename" content="保定">
-    <meta name="robots" content="index, follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "权",
+  "url": "https://jiaquan.top/",
+  "email": "me@jiaquan.top",
+  "description": "一个九零后小伙子，来自河北保定，喜欢待在互联网的小角落里折腾点自己的东西。",
+  "jobTitle": "开发者",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "保定",
+    "addressRegion": "河北",
+    "addressCountry": "CN"
+  },
+  "knowsAbout": ["HTML", "CSS", "JavaScript", "PHP", "Python", "MySQL", "Linux", "Nginx", "Docker", "Git", "Shell"],
+  "sameAs": [
+    "https://github.com/itboy365"
+  ]
+}
+</script>
 
-    <!-- 社交分享 -->
-    <meta property="og:title" content="iTboy · 独立开发者">
-    <meta property="og:description" content="河北保定 90 后独立开发者。用代码把想法一个个落地。">
-    <meta property="og:url" content="https://itboy.top/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="iTboy">
-    <meta property="og:locale" content="zh_CN">
+<style>
+  :root {
+    --bg: #faf7f2;
+    --card: #fffdfb;
+    --text: #3a3a3a;
+    --text-soft: #8a8a8a;
+    --accent: #c98b6b;
+    --accent-soft: #f3e6de;
+    --accent-alt: #6b7f6e;
+    --line: #efe9e2;
+    --line-soft: #f5f1ec;
+    --glow: rgba(201, 139, 107, 0.22);
+    --shadow-1: rgba(60, 40, 20, 0.05);
+    --shadow-2: rgba(60, 40, 20, 0.08);
+    --overlay-bg: rgba(40, 30, 20, 0.35);
+    --toast-bg: rgba(255, 253, 251, 0.98);
+    --toast-border: rgba(201, 139, 107, 0.2);
+    --toast-shadow: 0 20px 50px rgba(60, 40, 20, 0.18);
+    --toast-email-bg: rgba(201, 139, 107, 0.1);
+  }
 
-    <!-- 结构化数据 -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "iTboy",
-      "url": "https://itboy.top/",
-      "email": "admin@itboy.top",
-      "jobTitle": "独立开发者",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "保定",
-        "addressRegion": "河北",
-        "addressCountry": "CN"
-      },
-      "knowsAbout": ["HTML", "CSS", "JavaScript", "Python", "Web 开发"],
-      "sameAs": ["https://github.com/itboy365"]
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141210;
+      --card: #1c1a17;
+      --text: #e8e3dc;
+      --text-soft: #9a938a;
+      --accent: #d9a184;
+      --accent-soft: #2a231e;
+      --accent-alt: #8aa08c;
+      --line: #2a2622;
+      --line-soft: #221f1b;
+      --glow: rgba(217, 161, 132, 0.18);
+      --shadow-1: rgba(0, 0, 0, 0.4);
+      --shadow-2: rgba(0, 0, 0, 0.5);
+      --overlay-bg: rgba(0, 0, 0, 0.55);
+      --toast-bg: rgba(28, 26, 23, 0.98);
+      --toast-border: rgba(217, 161, 132, 0.2);
+      --toast-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      --toast-email-bg: rgba(217, 161, 132, 0.12);
     }
-    </script>
-
-    <!-- 字体 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;850&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* ====== 色彩变量 ====== */
-        :root {
-            --bg: #141C26;
-            --bg-soft: #1a2430;
-            --surface: rgba(24, 32, 46, 0.7);
-            --surface-hover: rgba(28, 38, 54, 0.85);
-            --text: #E8E4DD;
-            --text-secondary: #A8A49B;
-            --text-muted: #6E6B64;
-            --vermilion: #C43D3D;
-            --vermilion-soft: rgba(196, 61, 61, 0.18);
-            --gold: #C49B4C;
-            --gold-soft: rgba(196, 155, 76, 0.15);
-            --ink-blue: #1C2838;
-            --ink-blue-soft: rgba(100, 140, 180, 0.15);
-            --jade: #2D8B6E;
-            --jade-soft: rgba(45, 139, 110, 0.15);
-            --glass-border: rgba(120, 110, 95, 0.25);
-            --glass-border-hover: rgba(160, 145, 120, 0.4);
-            --glass-shadow: 0 4px 32px rgba(0, 0, 0, 0.3);
-            --glass-shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.45);
-            --radius: 22px;
-            --font: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            --font-mono: 'JetBrains Mono', 'Consolas', monospace;
-        }
-
-        body.light-mode {
-            --bg: #FAF7F2;
-            --bg-soft: #f2ede4;
-            --surface: rgba(255, 252, 247, 0.75);
-            --surface-hover: rgba(255, 252, 247, 0.92);
-            --text: #2C2C2C;
-            --text-secondary: #6B6B6B;
-            --text-muted: #9B9B9B;
-            --glass-border: rgba(180, 170, 155, 0.25);
-            --glass-border-hover: rgba(180, 170, 155, 0.45);
-            --glass-shadow: 0 4px 32px rgba(60, 40, 20, 0.06);
-            --glass-shadow-hover: 0 16px 48px rgba(60, 40, 20, 0.11);
-            --vermilion-soft: rgba(196, 61, 61, 0.08);
-            --gold-soft: rgba(196, 155, 76, 0.1);
-            --ink-blue-soft: rgba(28, 40, 56, 0.08);
-            --jade-soft: rgba(45, 139, 110, 0.08);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-
-        body {
-            font-family: var(--font);
-            background: var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2.5rem 1.25rem;
-            line-height: 1.7;
-            background-image:
-                radial-gradient(ellipse at 8% 15%, rgba(196, 61, 61, 0.04) 0%, transparent 50%),
-                radial-gradient(ellipse at 88% 80%, rgba(196, 155, 76, 0.04) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(45, 139, 110, 0.02) 0%, transparent 60%);
-            transition: background 0.5s ease, color 0.5s ease;
-        }
-
-        .container {
-            max-width: 1000px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        /* ====== 主题切换按钮 ====== */
-        .theme-toggle {
-            position: fixed;
-            top: 1.5rem;
-            right: 1.5rem;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: 1px solid var(--glass-border);
-            background: var(--surface);
-            backdrop-filter: blur(18px);
-            color: var(--text);
-            font-size: 1.1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: 100;
-            box-shadow: var(--glass-shadow);
-        }
-
-        .theme-toggle:hover {
-            transform: scale(1.08) rotate(15deg);
-            border-color: var(--glass-border-hover);
-            box-shadow: var(--glass-shadow-hover);
-        }
-
-        .theme-toggle:active {
-            transform: scale(0.95);
-        }
-
-        /* ====== 头部 ====== */
-        .brand-section {
-            text-align: center;
-            animation: fadeUpIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-            margin-top: 0.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .avatar {
-            width: 88px;
-            height: 88px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #C43D3D 0%, #8B2D2D 50%, #C49B4C 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            font-weight: 850;
-            letter-spacing: 0.05em;
-            color: #fff;
-            box-shadow:
-                0 8px 32px rgba(196, 61, 61, 0.25),
-                0 0 0 4px rgba(196, 61, 61, 0.08);
-            animation: avatarFloat 4s ease-in-out infinite;
-            position: relative;
-            user-select: none;
-        }
-
-        .avatar::after {
-            content: '';
-            position: absolute;
-            bottom: 2px;
-            right: 2px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #48C060;
-            border: 3px solid var(--bg);
-            box-shadow: 0 0 12px rgba(72, 192, 96, 0.6);
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes avatarFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 12px rgba(72, 192, 96, 0.6); }
-            50% { box-shadow: 0 0 20px rgba(72, 192, 96, 0.9); }
-        }
-
-        .brand-section .logo {
-            font-size: clamp(2.2rem, 4vw, 3rem);
-            font-weight: 850;
-            letter-spacing: -0.03em;
-            background: linear-gradient(135deg, #C43D3D 0%, #8B2D2D 35%, #C49B4C 70%, #C43D3D 100%);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientShift 6s ease-in-out infinite;
-            display: inline-block;
-            line-height: 1.1;
-        }
-
-        .tagline {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            letter-spacing: 0.12em;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .tagline::before,
-        .tagline::after {
-            content: '';
-            width: 24px;
-            height: 1px;
-            background: var(--glass-border);
-        }
-
-        /* ====== 简介 ====== */
-        .intro-section {
-            max-width: 640px;
-            margin: 0 auto;
-            text-align: center;
-            animation: fadeUpIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
-        }
-
-        .intro-section p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.9;
-            letter-spacing: 0.02em;
-        }
-
-        /* ====== 作品网格 ====== */
-        .works-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            animation: fadeUpIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
-            margin-top: 0.5rem;
-        }
-
-        .card {
-            background: var(--surface);
-            backdrop-filter: blur(18px);
-            border-radius: var(--radius);
-            padding: 1.8rem 1.6rem;
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--glass-shadow);
-            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--card-accent, transparent), transparent);
-            opacity: 0;
-            transition: opacity 0.45s;
-        }
-
-        .card:hover::before {
-            opacity: 1;
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--glass-shadow-hover);
-            border-color: var(--glass-border-hover);
-            background: var(--surface-hover);
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 0.8rem;
-        }
-
-        .card-icon {
-            font-size: 1.9rem;
-            display: inline-block;
-            transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        .card:hover .card-icon { transform: scale(1.12) rotate(-6deg); }
-
-        .status-badge {
-            font-size: 0.66rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            padding: 0.22rem 0.6rem;
-            border-radius: 6px;
-            text-transform: uppercase;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        .status-badge::before {
-            content: '';
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: currentColor;
-        }
-
-        .status-online {
-            color: #48C090;
-            background: rgba(72, 192, 144, 0.1);
-        }
-
-        .status-online::before {
-            animation: statusPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes statusPulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-
-        .card h2 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 0.4rem;
-            letter-spacing: 0.5px;
-        }
-
-        .card .card-desc {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            line-height: 1.7;
-            flex: 1;
-            margin-bottom: 1rem;
-        }
-
-        .card-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.35rem;
-            margin-bottom: 1rem;
-        }
-
-        .tag {
-            font-size: 0.68rem;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            padding: 0.18rem 0.5rem;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        body.light-mode .tag {
-            background: rgba(0, 0, 0, 0.03);
-            border-color: rgba(0, 0, 0, 0.05);
-        }
-
-        .card .card-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            font-weight: 600;
-            font-size: 0.82rem;
-            padding: 0.45rem 1rem;
-            border-radius: 10px;
-            transition: all 0.35s;
-            align-self: flex-start;
-        }
-
-        .card-news { border-left: 4px solid rgba(196, 61, 61, 0.5); --card-accent: rgba(196, 61, 61, 0.5); }
-        .card-news .card-link { color: #D65A5A; background: var(--vermilion-soft); }
-        .card-news:hover .card-link { background: rgba(196, 61, 61, 0.28); }
-
-        .card-gold { border-left: 4px solid rgba(196, 155, 76, 0.5); --card-accent: rgba(196, 155, 76, 0.5); }
-        .card-gold .card-link { color: #C49B4C; background: var(--gold-soft); }
-        .card-gold:hover .card-link { background: rgba(196, 155, 76, 0.28); }
-
-        .card-blog { border-left: 4px solid rgba(100, 140, 180, 0.45); --card-accent: rgba(100, 140, 180, 0.5); }
-        .card-blog .card-link { color: #7AADE0; background: var(--ink-blue-soft); }
-        .card-blog:hover .card-link { background: rgba(100, 140, 180, 0.28); }
-
-        /* ====== 关于我 ====== */
-        .about-section {
-            background: var(--surface);
-            backdrop-filter: blur(18px);
-            border-radius: var(--radius);
-            padding: 1.8rem 2rem;
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--glass-shadow);
-            animation: fadeUpIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
-        }
-
-        .about-section h2 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .about-section h2::before {
-            content: '';
-            width: 3px;
-            height: 16px;
-            background: linear-gradient(180deg, #C43D3D, #C49B4C);
-            border-radius: 2px;
-        }
-
-        .about-section p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.9;
-            margin-bottom: 0.75rem;
-        }
-
-        .about-section p:last-child {
-            margin-bottom: 0;
-        }
-
-        .about-section strong {
-            color: var(--text);
-            font-weight: 700;
-        }
-
-        /* ====== 页脚 ====== */
-        .footer {
-            text-align: center;
-            animation: fadeUpIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
-            padding-top: 0.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.2rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 0.7rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.5rem 1.3rem;
-            border-radius: 10px;
-            background: var(--surface);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            color: var(--text-secondary);
-            font-size: 0.82rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            cursor: pointer;
-        }
-
-        .social-link:hover {
-            color: var(--text);
-            border-color: var(--glass-border-hover);
-            transform: translateY(-2px);
-            box-shadow: var(--glass-shadow);
-        }
-
-        .footer-meta {
-            display: flex;
-            flex-direction: column;
-            gap: 0.7rem;
-            align-items: center;
-        }
-
-        .footer .timer-line {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 0.35rem;
-            justify-content: center;
-        }
-
-        .footer .timer-display {
-            font-family: var(--font-mono);
-            font-weight: 700;
-            font-size: 0.88rem;
-            background: linear-gradient(90deg, #E84848, #F0A030, #E8D44D, #48C060, #4098E0, #7848D8, #D84898, #E84848);
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: rainbowFlow 3s linear infinite;
-        }
-
-        /* ====== 版权行（国际通用严谨版） ====== */
-        .footer .copyright {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            letter-spacing: 0.04em;
-            font-weight: 400;
-            line-height: 1.6;
-            margin-top: 0.4rem;
-            text-align: center;
-        }
-
-        .footer .copyright .brand {
-            font-weight: 700;
-            color: var(--text-secondary);
-            font-size: 0.82rem;
-            letter-spacing: 0.02em;
-            margin: 0 0.1em;
-        }
-
-        /* ====== 回到顶部 ====== */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: var(--surface);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            color: var(--text);
-            font-size: 1.1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: 100;
-            box-shadow: var(--glass-shadow);
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--glass-shadow-hover);
-            border-color: var(--glass-border-hover);
-        }
-
-        /* ====== 动画 ====== */
-        @keyframes fadeUpIn {
-            from { opacity: 0; transform: translateY(18px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        @keyframes rainbowFlow {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 300% 50%; }
-        }
-
-        /* ====== 响应式 ====== */
-        @media (max-width: 1024px) {
-            .works-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 768px) {
-            body { padding: 1.8rem 1rem; }
-            .works-grid { grid-template-columns: 1fr; }
-            .card { padding: 1.6rem 1.4rem; }
-            .brand-section .logo { font-size: 2.2rem; }
-            .back-to-top { bottom: 1.2rem; right: 1.2rem; }
-            .theme-toggle { top: 1rem; right: 1rem; width: 40px; height: 40px; }
-            .tagline::before, .tagline::after { width: 16px; }
-        }
-
-        @media (max-width: 480px) {
-            body { padding: 1.2rem 0.75rem; }
-            .card { padding: 1.4rem 1.1rem; border-radius: 16px; }
-            .brand-section .logo { font-size: 1.9rem; }
-            .avatar { width: 72px; height: 72px; font-size: 1.3rem; }
-            .about-section { padding: 1.4rem 1.3rem; }
-            .social-link { padding: 0.5rem 1.1rem; font-size: 0.8rem; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
-
-    <!-- 百度统计 -->
-    <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?edfc3c91ef0069bdd3633cd46538a3d0";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-    </script>
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { min-height: 100%; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+      "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.8;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .glow {
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--glow), transparent 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.6s ease;
+    opacity: 0;
+    z-index: 0;
+  }
+
+  .card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 460px;
+    background: var(--card);
+    border-radius: 20px;
+    padding: 40px 38px 26px;
+    box-shadow: 0 8px 28px var(--shadow-1), 0 1px 3px var(--shadow-2);
+    opacity: 0;
+    transform: translateY(16px);
+    animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px var(--shadow-2), 0 2px 6px var(--shadow-1);
+  }
+
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ====== 顶部：头像 + 一言 ====== */
+  .mark {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid rgba(201, 139, 107, 0.25);
+    box-shadow: 0 4px 12px rgba(201, 139, 107, 0.15);
+  }
+
+  .quote {
+    min-height: 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 26px;
+    padding: 0 4px;
+    transition: opacity 0.45s ease;
+  }
+
+  .quote .text {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.9;
+    letter-spacing: 0.3px;
+  }
+
+  .quote .from {
+    display: block;
+    font-size: 11.5px;
+    color: var(--text-soft);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+    min-height: 18px;
+  }
+
+  .quote .from::before {
+    content: "—— ";
+    color: var(--accent-alt);
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--line);
+    margin: 0 -38px 24px;
+  }
+
+  .block {
+    margin-bottom: 26px;
+  }
+
+  .block:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .block h2 {
+    font-size: 11.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    font-weight: 600;
+    margin-bottom: 11px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .block h2::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  .block p {
+    font-size: 14px;
+    line-height: 2;
+    color: var(--text);
+    letter-spacing: 0.2px;
+    text-indent: 2em;
+  }
+
+  .block p strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ====== 技能标签 ====== */
+  .skill-group {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .skill-group:first-of-type {
+    margin-top: 18px;
+  }
+
+  .skill-group:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .skill-label {
+    font-size: 11px;
+    color: #c4bdb5;
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+    width: 72px;
+    text-align: right;
+    padding-top: 1px;
+  }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .skills span {
+    font-size: 12px;
+    padding: 4px 11px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    letter-spacing: 0.3px;
+    border: 1px solid transparent;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+
+  .skills span:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent-alt);
+  }
+
+  /* ====== 作品卡片 ====== */
+  .works {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 6px;
+  }
+
+  .work-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 14px 8px 12px;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid transparent;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .work-card:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent-alt);
+    transform: translateY(-2px);
+  }
+
+  .work-icon {
+    font-size: 22px;
+    line-height: 1;
+    margin-bottom: 8px;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .work-card:hover .work-icon {
+    transform: scale(1.12);
+  }
+
+  .work-title {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    color: var(--text);
+    transition: color 0.25s ease;
+  }
+
+  .work-desc {
+    display: block;
+    font-size: 11px;
+    color: var(--text-soft);
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+    transition: color 0.25s ease;
+  }
+
+  .work-card:hover .work-title {
+    color: #fff;
+  }
+
+  .work-card:hover .work-desc {
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  /* ====== 联系卡片 ====== */
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 6px;
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    font-family: inherit;
+    width: 100%;
+    text-align: left;
+  }
+
+  .contact-card:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent-alt);
+    transform: translateY(-2px);
+  }
+
+  .contact-icon {
+    font-size: 16px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .contact-text {
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .contact-text .contact-label {
+    color: var(--text-soft);
+    margin-right: 6px;
+    transition: color 0.25s ease;
+  }
+
+  .contact-card:hover .contact-text .contact-label {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  /* 药丸式动作按钮 */
+  .contact-action {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+
+  .contact-card:hover .contact-action {
+    background: #fff;
+    color: var(--accent);
+  }
+
+  /* ====== 页脚 ====== */
+  .footer {
+    font-size: 12.5px;
+    color: #9a938a;
+    letter-spacing: 0.5px;
+    line-height: 1.9;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 30px;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .footer .brand {
+    font-weight: 700;
+    color: var(--text);
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    margin: 0 0.1em;
+  }
+
+  /* ====== 邮箱弹窗 ====== */
+  .email-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    background: var(--overlay-bg);
+    backdrop-filter: blur(6px);
+  }
+
+  .email-overlay.active {
+    display: flex;
+    animation: overlayIn 0.25s ease;
+  }
+
+  .email-toast {
+    background: var(--toast-bg);
+    border: 1px solid var(--toast-border);
+    border-radius: 20px;
+    padding: 32px 34px 26px;
+    text-align: center;
+    max-width: 360px;
+    width: 90%;
+    color: var(--text);
+    box-shadow: var(--toast-shadow);
+    animation: toastIn 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .email-toast .toast-icon {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .email-toast .toast-title {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+  }
+
+  .email-toast .toast-email {
+    font-family: "SF Mono", "JetBrains Mono", Consolas, monospace;
+    font-size: 13px;
+    color: var(--accent);
+    background: var(--toast-email-bg);
+    padding: 6px 14px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+  }
+
+  .email-toast .toast-question {
+    font-size: 13px;
+    color: var(--text-soft);
+    margin-bottom: 20px;
+  }
+
+  .email-toast .toast-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .email-toast .btn-cancel,
+  .email-toast .btn-confirm {
+    padding: 9px 26px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 13.5px;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+    transition: all 0.22s ease;
+  }
+
+  .email-toast .btn-cancel {
+    background: var(--accent-soft);
+    color: var(--text-soft);
+  }
+
+  .email-toast .btn-cancel:hover {
+    background: var(--line);
+    color: var(--text);
+  }
+
+  .email-toast .btn-confirm {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .email-toast .btn-confirm:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(201, 139, 107, 0.4);
+    filter: brightness(1.05);
+  }
+
+  .email-toast .btn-cancel:focus-visible,
+  .email-toast .btn-confirm:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  @keyframes overlayIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes toastIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.94); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* ====== 移动端 ====== */
+  @media (max-width: 520px) {
+    .works {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .work-card {
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+      padding: 12px 14px;
+      gap: 12px;
+    }
+
+    .work-icon {
+      margin-bottom: 0;
+      font-size: 20px;
+      flex-shrink: 0;
+      width: 24px;
+      text-align: center;
+    }
+
+    .work-card:hover .work-icon {
+      transform: none;
+    }
+
+    .work-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .work-title {
+      margin-bottom: 2px;
+      font-size: 13.5px;
+    }
+
+    .work-desc {
+      font-size: 11.5px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .card { padding: 32px 22px 20px; border-radius: 16px; }
+    .divider { margin: 0 -22px 20px; }
+    body { padding: 28px 16px; }
+    .skill-label { width: 62px; font-size: 10px; }
+    .quote { min-height: 80px; }
+    .email-toast { padding: 26px 22px 22px; }
+    .mark { width: 52px; height: 52px; font-size: 22px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card { animation: none; opacity: 1; transform: none; }
+    .glow { display: none; }
+    * { transition: none !important; }
+    .email-overlay.active,
+    .email-toast { animation: none; }
+  }
+</style>
 </head>
 <body>
 
-    <!-- 主题切换 -->
-    <button class="theme-toggle" id="themeToggle" aria-label="切换主题" title="切换主题">
-        <span id="themeIcon">☀️</span>
-    </button>
+<div class="glow" id="glow" aria-hidden="true"></div>
 
-    <div class="container">
-        <header class="brand-section">
-            <div class="avatar" aria-label="头像">iT</div>
-            <h1 class="logo">iTboy</h1>
-            <p class="tagline">河北保定 · 独立开发者</p>
-        </header>
+<main class="card">
+  <div class="mark" aria-hidden="true">权</div>
 
-        <section class="intro-section" aria-label="个人简介">
-            <p>从 HTML 到 Python，用代码把想法一个个落地。<br>作品不多，但每一个都还在用。</p>
-        </section>
+  <div class="quote" id="quote" aria-live="polite">
+    <span class="text" id="quote-text">正在加载一句…</span>
+    <span class="from" id="quote-from"></span>
+  </div>
 
-        <main class="works-grid" aria-label="作品集">
-            <a href="https://60s.itboy.top" target="_blank" rel="noopener" class="card card-news">
-                <div class="card-header">
-                    <span class="card-icon">🔥</span>
-                    <span class="status-badge status-online">在线</span>
-                </div>
-                <h2>每日 60s 速览</h2>
-                <p class="card-desc">新闻摘要与天气聚合，多城市切换。一眼看完今日热点。</p>
-                <div class="card-tags">
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">API</span>
-                    <span class="tag">每日更新</span>
-                </div>
-                <span class="card-link">进入速览 ↗</span>
-            </a>
+  <div class="divider"></div>
 
-            <a href="https://jinjia.itboy.top" target="_blank" rel="noopener" class="card card-gold">
-                <div class="card-header">
-                    <span class="card-icon">📊</span>
-                    <span class="status-badge status-online">在线</span>
-                </div>
-                <h2>每日金价观察站</h2>
-                <p class="card-desc">国内、国际、银行报价一屏看完。多源贵金属价格实时展示。</p>
-                <div class="card-tags">
-                    <span class="tag">数据可视化</span>
-                    <span class="tag">实时行情</span>
-                </div>
-                <span class="card-link">查看金价 ↗</span>
-            </a>
+  <section class="block">
+    <h2>关于我</h2>
+    <p>一个九零后小伙子，来自河北保定，喜欢待在互联网的小角落里折腾点自己的东西。从第一次碰服务器开始就没停下来，写过博客、搭过站、配过环境，也踩过不少坑。现在更想把东西做简单，<strong>把复杂留给自己。</strong></p>
 
-            <a href="https://jinrong.itboy.top" target="_blank" rel="noopener" class="card card-blog">
-                <div class="card-header">
-                    <span class="card-icon">📈</span>
-                    <span class="status-badge status-online">在线</span>
-                </div>
-                <h2>金融数据面板</h2>
-                <p class="card-desc">将庞杂的金融数据整理为清晰的图形面板，直观呈现数据背后的趋势。</p>
-                <div class="card-tags">
-                    <span class="tag">金融</span>
-                    <span class="tag">Dashboard</span>
-                </div>
-                <span class="card-link">查看面板 ↗</span>
-            </a>
-        </main>
-
-        <section class="about-section" aria-label="关于我">
-            <h2>关于我</h2>
-            <p>我是 <strong>iTboy</strong>，河北保定人，独立开发者。</p>
-            <p>专注<strong>信息聚合</strong>与<strong>数据可视化</strong>。不追热点，不做大而全，把手里的小工具一个个做扎实，就够了。</p>
-            <p>如果你对我的作品感兴趣，或者想聊聊技术、聊聊产品，随时可以通过下面的方式找到我。</p>
-        </section>
-
-        <footer class="footer">
-            <div class="social-links">
-                <a href="https://jiaquan.top" target="_blank" rel="noopener" class="social-link">
-                    <span>✉</span> 联系我
-                </a>
-            </div>
-
-            <div class="footer-meta">
-                <div class="timer-line">
-                    <span>本站已运行</span>
-                    <span class="timer-display" id="timer">0 天 00 时 00 分 00 秒</span>
-                </div>
-
-                <p class="copyright">
-                    Copyright © 2026 <span class="brand">iTboy</span>. 保留所有权利。
-                </p>
-            </div>
-        </footer>
+    <div class="skill-group">
+      <div class="skill-label">语言</div>
+      <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JS</span>
+        <span>PHP</span>
+        <span>Python</span>
+      </div>
     </div>
 
-    <!-- 回到顶部 -->
-    <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+    <div class="skill-group">
+      <div class="skill-label">数据·运维</div>
+      <div class="skills">
+        <span>Git</span>
+        <span>Shell</span>
+        <span>Linux</span>
+        <span>MySQL</span>
+        <span>Nginx</span>
+        <span>Docker</span>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        (function() {
-            // ====== 主题切换 ======
-            const themeToggle = document.getElementById('themeToggle');
-            const themeIcon = document.getElementById('themeIcon');
+  <section class="block">
+    <h2>作品</h2>
+    <div class="works">
+      <a class="work-card" href="https://www.itboy.top" target="_blank" rel="noopener" title="今日速览">
+        <span class="work-icon">📰</span>
+        <span class="work-body">
+          <span class="work-title">今日速览</span>
+          <span class="work-desc">新闻 · 热搜 · 影音</span>
+        </span>
+      </a>
 
-            function applyTheme(theme) {
-                if (theme === 'light') {
-                    document.body.classList.add('light-mode');
-                    themeIcon.textContent = '🌙';
-                } else {
-                    document.body.classList.remove('light-mode');
-                    themeIcon.textContent = '☀️';
-                }
-            }
+      <a class="work-card" href="https://itboy.top" target="_blank" rel="noopener" title="iTboy">
+        <span class="work-icon">🏠</span>
+        <span class="work-body">
+          <span class="work-title">iTboy</span>
+          <span class="work-desc">60s · 金价 · 金融</span>
+        </span>
+      </a>
 
-            const savedTheme = localStorage.getItem('itboy-theme');
-            if (savedTheme) {
-                applyTheme(savedTheme);
-            } else {
-                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                applyTheme(prefersDark ? 'dark' : 'light');
-            }
+      <a class="work-card" href="https://henlihai.cn" target="_blank" rel="noopener" title="为人民服务">
+        <span class="work-icon">🏛️</span>
+        <span class="work-body">
+          <span class="work-title">为人民服务</span>
+          <span class="work-desc">政务服务导航</span>
+        </span>
+      </a>
+    </div>
+  </section>
 
-            themeToggle.addEventListener('click', function() {
-                const isLight = document.body.classList.contains('light-mode');
-                const next = isLight ? 'dark' : 'light';
-                applyTheme(next);
-                localStorage.setItem('itboy-theme', next);
-            });
+  <section class="block">
+    <h2>联系我</h2>
+    <div class="contacts">
+      <button class="contact-card" id="emailTrigger" type="button" title="点击复制邮箱">
+        <span class="contact-icon">✉</span>
+        <span class="contact-text">
+          <span class="contact-label">邮箱</span>me@jiaquan.top
+        </span>
+        <span class="contact-action">复制</span>
+      </button>
 
-            // ====== 运行时间计时 ======
-            const timerEl = document.getElementById('timer');
-            const startDate = new Date('2024-08-01T00:00:00+08:00');
-            function pad(n) { return String(n).padStart(2, '0'); }
-            function updateTimer() {
-                const now = new Date();
-                const diff = now - startDate;
-                const totalSeconds = Math.floor(diff / 1000);
-                const days = Math.floor(totalSeconds / 86400);
-                const hours = Math.floor((totalSeconds % 86400) / 3600);
-                const minutes = Math.floor((totalSeconds % 3600) / 60);
-                const seconds = totalSeconds % 60;
-                timerEl.textContent = days + ' 天 ' + pad(hours) + ' 时 ' + pad(minutes) + ' 分 ' + pad(seconds) + ' 秒';
-            }
-            updateTimer();
-            setInterval(updateTimer, 1000);
+      <a class="contact-card" href="https://github.com/itboy365" target="_blank" rel="noopener" title="GitHub">
+        <span class="contact-icon">⌨</span>
+        <span class="contact-text">
+          <span class="contact-label">GitHub</span>itboy365
+        </span>
+        <span class="contact-action">访问</span>
+      </a>
+    </div>
+  </section>
 
-            // ====== 回到顶部 ======
-            const backToTop = document.getElementById('backToTop');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 400) {
-                    backToTop.classList.add('visible');
-                } else {
-                    backToTop.classList.remove('visible');
-                }
-            }, { passive: true });
+  <footer class="footer">
+    Copyright © 2026 <span class="brand">权</span>. 保留所有权利。
+  </footer>
+</main>
 
-            backToTop.addEventListener('click', function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        })();
-    </script>
+<div class="email-overlay" id="emailOverlay" aria-hidden="true">
+  <div class="email-toast" role="dialog" aria-modal="true" aria-labelledby="toastTitle">
+    <div class="toast-icon">📋</div>
+    <div class="toast-title" id="toastTitle">您已成功复制邮箱</div>
+    <div class="toast-email">me@jiaquan.top</div>
+    <div class="toast-question">是否发送邮件？</div>
+    <div class="toast-buttons">
+      <button class="btn-cancel" id="btnCancel" type="button">取消</button>
+      <button class="btn-confirm" id="btnConfirm" type="button">确定</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ====== 鼠标光晕 ====== */
+  const glow = document.getElementById('glow');
+  let glowTimer;
+  document.addEventListener('mousemove', (e) => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+    glow.style.opacity = '1';
+    clearTimeout(glowTimer);
+    glowTimer = setTimeout(() => { glow.style.opacity = '0'; }, 1200);
+  });
+  document.addEventListener('mouseleave', () => {
+    glow.style.opacity = '0';
+  });
+
+  /* ====== 一言轮播 ====== */
+  const quoteEl = document.getElementById('quote');
+  const textEl = document.getElementById('quote-text');
+  const fromEl = document.getElementById('quote-from');
+  const FALLBACK = '说点想说的，写点想写的。';
+  const INTERVAL = 12000;
+
+  async function fetchQuote() {
+    const controller = new AbortController();
+    const abortTimer = setTimeout(() => controller.abort(), 3000);
+
+    try {
+      const res = await fetch(
+        'https://v1.hitokoto.cn/?encode=json&max_length=22&min_length=6',
+        { signal: controller.signal }
+      );
+      clearTimeout(abortTimer);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+
+      const data = await res.json();
+      const text = data.hitokoto || FALLBACK;
+      const from = data.from
+        ? data.from + (data.from_who ? ' · ' + data.from_who : '')
+        : '';
+
+      quoteEl.style.opacity = 0;
+      setTimeout(() => {
+        textEl.textContent = text;
+        fromEl.textContent = from;
+        quoteEl.style.opacity = 1;
+      }, 450);
+    } catch (e) {
+      clearTimeout(abortTimer);
+      console.warn('一言获取失败:', e.message || e);
+      textEl.textContent = FALLBACK;
+      fromEl.textContent = '';
+      quoteEl.style.opacity = 1;
+    }
+  }
+
+  let quoteTimer = setInterval(fetchQuote, INTERVAL);
+  fetchQuote();
+
+  quoteEl.addEventListener('mouseenter', () => clearInterval(quoteTimer));
+  quoteEl.addEventListener('mouseleave', () => {
+    clearInterval(quoteTimer);
+    quoteTimer = setInterval(fetchQuote, INTERVAL);
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      clearInterval(quoteTimer);
+    } else {
+      clearInterval(quoteTimer);
+      quoteTimer = setInterval(fetchQuote, INTERVAL);
+      fetchQuote();
+    }
+  });
+
+  window.addEventListener('beforeunload', () => clearInterval(quoteTimer));
+
+  /* ====== 邮箱复制弹窗 ====== */
+  const emailTrigger = document.getElementById('emailTrigger');
+  const overlay = document.getElementById('emailOverlay');
+  const btnCancel = document.getElementById('btnCancel');
+  const btnConfirm = document.getElementById('btnConfirm');
+  const emailAddr = 'me@jiaquan.top';
+  let autoCloseTimer = null;
+  let lastFocused = null;
+
+  function copyEmail() {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(emailAddr).catch(() => {});
+    }
+    const ta = document.createElement('textarea');
+    ta.value = emailAddr;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    ta.setAttribute('readonly', '');
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    return Promise.resolve();
+  }
+
+  function openToast() {
+    lastFocused = document.activeElement;
+    copyEmail();
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => btnCancel && btnCancel.focus(), 50);
+    autoCloseTimer = setTimeout(closeToast, 5000);
+  }
+
+  function closeToast() {
+    if (autoCloseTimer) {
+      clearTimeout(autoCloseTimer);
+      autoCloseTimer = null;
+    }
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocused && typeof lastFocused.focus === 'function') {
+      lastFocused.focus();
+    }
+  }
+
+  function sendEmail() {
+    closeToast();
+    window.location.href = 'mailto:' + emailAddr;
+  }
+
+  emailTrigger.addEventListener('click', function (e) {
+    e.preventDefault();
+    openToast();
+  });
+
+  btnCancel.addEventListener('click', function (e) {
+    e.stopPropagation();
+    closeToast();
+  });
+
+  btnConfirm.addEventListener('click', function (e) {
+    e.stopPropagation();
+    sendEmail();
+  });
+
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeToast();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overlay.classList.contains('active')) {
+      closeToast();
+    }
+  });
+</script>
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?295bebda5bd7c3d957670748f9354fd2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 </body>
 </html>
