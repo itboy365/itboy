@@ -1,9 +1,55 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://itboy.top/</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-</urlset>
+# ==========================================
+# iTboy 极客个人主页 - 爬虫协议 (robots.txt)
+# 欢迎所有合规搜索引擎及 AI 爬虫抓取
+# ==========================================
+
+# 1. 默认放行所有爬虫
+User-agent: *
+Allow: /
+
+# ==========================================
+# 2. 国内主流搜索引擎
+# ==========================================
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: YisouSpider
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# ==========================================
+# 3. 国际主流搜索引擎
+# ==========================================
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# ==========================================
+# 4. AI 大模型与数据抓取
+# ==========================================
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# ==========================================
+# 5. 站点地图声明
+# ==========================================
+Sitemap: https://itboy.top/sitemap.xml
